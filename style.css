@@ -1,0 +1,133 @@
+/* Global Styling */
+* {
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  
+}
+
+/* Header Styling */
+header {
+
+display: flex;
+justify-content: space-between;
+flex-direction: row;
+
+
+}
+
+header h1 {
+    top:50%;
+    background-color:#4242ed;
+    color: #fff;
+    border:none; 
+    border-radius:10px; 
+    padding:15px;
+    min-height:30px; 
+    min-width: 120px;
+}
+
+#timeleft {
+    top:50%;
+    background-color:#4242ed;
+    color: #fff;
+    border:none; 
+    border-radius:10px; 
+    padding:15px;
+    min-height:30px; 
+    min-width: 120px;
+}
+
+#vhsbutton {
+    background-color:#4242ed;
+    color: #fff;
+    border:none; 
+    border-radius:10px; 
+    padding:5px;
+    min-height:30px; 
+    min-width: 120px;
+    margin: 10px
+}
+
+.startquiz {
+display: flex;
+justify-content: center;
+flex-direction: column;
+padding: 10px;
+
+}
+
+.startquiz h1{
+display: flex;
+align-items: center;
+margin: 20px;   
+padding-top: 20px;
+margin-left: 35%;
+margin-right: 30%;
+}
+
+.startquiz p{
+    padding-top: 20px;
+                
+}
+
+.startquiz button{
+    display: flex;
+    top:50%;
+    background-color:#4242ed;
+    color: #fff;
+    border:none; 
+    border-radius:10px; 
+    padding:15px;
+    min-height:30px; 
+    min-width: 120px;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 40%;
+    margin-left: 40%;
+           
+}
+
+.startquiz button:active{
+
+background-color: rgb(32, 61, 227);
+border-style:solid;
+border: black 2px;
+       
+}
+
+#vhsbutton:active{
+
+    background-color: rgb(32, 61, 227);
+    border-style:solid;
+    border: black 2px;
+           
+    }
+
+#questions {
+display: flex;
+justify-content: center;
+font-size: 35px;
+font-weight: bold;
+
+}
+
+
+#answers {
+font-size: 21px;
+margin-left: 20%;
+margin-right: 20%;
+}
+
+/* Styling for the header section */
+
+
+.buttonstyling {
+    position: absolute;
+    top:50%;
+    background-color:#0a0a23;
+    color: #fff;
+    border:none; 
+    border-radius:10px; 
+    padding:15px;
+    min-height:30px; 
+    min-width: 120px;
+  }
