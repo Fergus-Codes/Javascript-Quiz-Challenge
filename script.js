@@ -278,3 +278,52 @@ buttonList4.append(answersButtons);
 
 }}
 
+function storehighscore (initialsText) {
+  var scores = localStorage.getItem("Scores")
+  if (scores) {
+    userHighScores = JSON.parse(scores)
+    userHighScores.push(initialsText + " completed the test with " + secondsLeft + " seconds left")
+  }
+  else {
+   
+    userHighScores.push(initialsText + " completed the test with " + secondsLeft + " seconds left")
+  }
+
+localStorage.setItem("Scores", JSON.stringify(userHighScores));   
+window.location.reload()
+}
+
+function gameOver() {
+
+    
+
+
+    questionLocation.innerText = "Game Over! Please enter your name belolw to be record your score on the highscores page."
+    buttonList1.attr('style', 'display: none')
+    buttonList2.attr('style', 'display: none')
+    buttonList3.attr('style', 'display: none')
+    buttonList4.attr('style', 'display: none')
+    $('#answernotifications').empty()
+
+   
+    var inputField = $('<input>')
+    inputField.attr("id", "initials-input");
+    inputField.attr("placeholder", "User's Name");
+    inputField.attr("style", "margin-left: 40%; margin-top: 20px; font-size: 30px");
+
+    $('#save-highscores').append(inputField)
+
+    var submitbtn = $('<button>')
+    submitbtn.text("Submit")
+    submitbtn.attr("style", "margin-left: 0%; font-size: 30px");
+
+    submitbtn.on('click', function() {
+        // grab value from input
+        var initialsText = $('#initials-input').val();
+        storehighscore(initialsText)
+    })
+
+    $('#save-highscores').append(submitbtn)
+   
+    
+}
