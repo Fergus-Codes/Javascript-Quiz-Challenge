@@ -1,3 +1,4 @@
+// All queryselectors to connect js to html
 var startQuizButton = document.querySelector('#startbutton')
 var timeLeft = document.querySelector ('#timeleft')
 var questionSection = document.querySelector('#question-section')
@@ -20,6 +21,11 @@ var subButton = document.createElement("input");
 var Initials = document.createElement("input");
 var form = document.createElement("form");
 var highscores = $('#highscorestable');
+
+
+// Variables 
+var secondsLeft = 60
+
 
 
 // Questions & Answers Variables:
@@ -46,6 +52,12 @@ var highscores = $('#highscorestable');
     var question4 = "Which company developed JavaScript?";
     var correctAnswer ="Netscape";  
     var answers4 = ["Google", "Netscape", "Facebook", "IBM"]
+   
+
+
+// First step: create event listner for the start quiz button which will:
+// Replace content on screen with the question and buttons with answers.
+// Start the timer on the top right.
 
 startQuizButton.addEventListener('click', function (){
 
@@ -100,6 +112,41 @@ vhsbutton.addEventListener('click', function(){
     
 })
 
+
+function gameOver() {
+
+    
+
+
+    questionLocation.innerText = "Game Over! Please enter your name belolw to be record your score on the highscores page."
+    buttonList1.attr('style', 'display: none')
+    buttonList2.attr('style', 'display: none')
+    buttonList3.attr('style', 'display: none')
+    buttonList4.attr('style', 'display: none')
+    $('#answernotifications').empty()
+
+   
+    var inputField = $('<input>')
+    inputField.attr("id", "initials-input");
+    inputField.attr("placeholder", "User's Name");
+    inputField.attr("style", "margin-left: 40%; margin-top: 20px; font-size: 30px");
+
+    $('#save-highscores').append(inputField)
+
+    var submitbtn = $('<button>')
+    submitbtn.text("Submit")
+    submitbtn.attr("style", "margin-left: 0%; font-size: 30px");
+
+    submitbtn.on('click', function() {
+        // grab value from input
+        var initialsText = $('#initials-input').val();
+        storehighscore(initialsText)
+    })
+
+    $('#save-highscores').append(submitbtn)
+   
+    
+}
 
 function Q1 () {
 
@@ -278,6 +325,7 @@ buttonList4.append(answersButtons);
 
 }}
 
+
 function storehighscore (initialsText) {
   var scores = localStorage.getItem("Scores")
   if (scores) {
@@ -293,37 +341,4 @@ localStorage.setItem("Scores", JSON.stringify(userHighScores));
 window.location.reload()
 }
 
-function gameOver() {
 
-    
-
-
-    questionLocation.innerText = "Game Over! Please enter your name belolw to be record your score on the highscores page."
-    buttonList1.attr('style', 'display: none')
-    buttonList2.attr('style', 'display: none')
-    buttonList3.attr('style', 'display: none')
-    buttonList4.attr('style', 'display: none')
-    $('#answernotifications').empty()
-
-   
-    var inputField = $('<input>')
-    inputField.attr("id", "initials-input");
-    inputField.attr("placeholder", "User's Name");
-    inputField.attr("style", "margin-left: 40%; margin-top: 20px; font-size: 30px");
-
-    $('#save-highscores').append(inputField)
-
-    var submitbtn = $('<button>')
-    submitbtn.text("Submit")
-    submitbtn.attr("style", "margin-left: 0%; font-size: 30px");
-
-    submitbtn.on('click', function() {
-        // grab value from input
-        var initialsText = $('#initials-input').val();
-        storehighscore(initialsText)
-    })
-
-    $('#save-highscores').append(submitbtn)
-   
-    
-}
