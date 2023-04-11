@@ -47,3 +47,55 @@ var highscores = $('#highscorestable');
     var correctAnswer ="Netscape";  
     var answers4 = ["Google", "Netscape", "Facebook", "IBM"]
 
+startQuizButton.addEventListener('click', function (){
+
+startQuizButton.setAttribute('style', 'display: none')
+
+answerLocation.setAttribute('style', 'display: none')
+
+
+var timerInterval = setInterval(function(){
+
+secondsLeft --;
+
+timeLeft.textContent = "Time: " + secondsLeft + " seconds left."
+
+    if (secondsLeft <= 0) {
+
+        clearInterval(timerInterval);        
+        
+        gameOver ()
+
+        
+    }
+
+ return
+
+}, 1000)
+
+Q1()
+
+})
+
+vhsbutton.addEventListener('click', function(){
+
+    var userHighScores = JSON.parse(localStorage.getItem("Scores"));
+
+    questionLocation.textContent = "Highscores!!!"
+
+    startQuizButton.setAttribute('style', 'display: none')
+
+    answerLocation.setAttribute('style', 'display: none')
+
+    for (var i = 0; i < userHighScores.length; i++) {
+
+        var highScoresTable = $('<li>');
+        
+        highScoresTable.attr('data-answer', userHighScores[i])
+        highScoresTable.text(userHighScores[i])
+        highScoresTable.attr("style", "margin-left: 35%; font-size: 30px")
+    }
+
+    highscores.append(highScoresTable)
+    
+})
