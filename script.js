@@ -1,3 +1,27 @@
+var startQuizButton = document.querySelector('#startbutton')
+var timeLeft = document.querySelector ('#timeleft')
+var questionSection = document.querySelector('#question-section')
+var answerSection = document.querySelector('#answer-section')
+var mainBodySection = document.querySelector('#main-body')
+var questionLocation = document.querySelector('#questions')
+var answerLocation = document.querySelector('#answers')
+
+var buttonList1 = $('#buttons1');
+var buttonList2 = $('#buttons2');
+var buttonList3 = $('#buttons3');
+var buttonList4 = $('#buttons4');
+
+var answerButtons = document.querySelectorAll('.buttonstyling')
+var answersButtons = $('<button>');
+var vhsbutton = document.querySelector('#vhsbutton')
+var down = document.getElementById('#answers');
+var userHighScores = [];
+var subButton = document.createElement("input");
+var Initials = document.createElement("input");
+var form = document.createElement("form");
+var highscores = $('#highscorestable');
+
+
 // Questions & Answers Variables:
 
 // Question 1
@@ -22,4 +46,4 @@
     var question4 = "Which company developed JavaScript?";
     var correctAnswer ="Netscape";  
     var answers4 = ["Google", "Netscape", "Facebook", "IBM"]
-   
+
