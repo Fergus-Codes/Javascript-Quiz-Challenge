@@ -99,3 +99,182 @@ vhsbutton.addEventListener('click', function(){
     highscores.append(highScoresTable)
     
 })
+
+
+function Q1 () {
+
+questionLocation.innerText = "What are the 5 datatypes supported by Javascript?"
+
+for (var i = 0; i < answers1.length; i++) {
+
+var answersButtons = $('<button>');
+
+answersButtons.addClass('.buttonstyling')
+answersButtons.attr('data-answer', answers1[i])
+answersButtons.text(answers1[i])
+answersButtons.on('click', function checkAnswer (event) {
+    var target = event.target.innerText
+
+    buttonList1.attr('style', 'display: none')
+    
+    if(target == correctAnswer1) {
+
+        var correctAnswerText = $('<p>')
+        correctAnswerText.text("Correct answer ✔️")
+        correctAnswerText.attr("style", "margin-left: 40%; font-size: 20px")
+        $('#answernotifications').empty().append(correctAnswerText)
+
+
+    } else {
+        var correctAnswerText = $('<p>')
+        correctAnswerText.text("Incorrect answer ❌")
+        correctAnswerText.attr("style", "margin-left: 40%; font-size: 20px")
+        $('#answernotifications').empty().append(correctAnswerText)
+        secondsLeft -= 15
+
+    }
+    
+    Q2 ()
+
+    })
+
+buttonList1.append(answersButtons);
+
+
+
+}}
+
+function Q2 () {
+
+
+
+questionLocation.innerText = "What are the scopes of a variable in JavaScript?"
+
+
+for (var i = 0; i < answers2.length; i++) {
+
+    var answersButtons = $('<button>');
+    
+    answersButtons.addClass('.buttonstyling')
+    answersButtons.attr('data-answer', answers2[i])
+    answersButtons.text(answers2[i])
+    answersButtons.on('click', function checkAnswer (event) {
+
+        buttonList2.attr('style', 'display: none')
+
+        var target = event.target.innerText
+
+        
+        if(target == correctAnswer2) {
+    
+            var correctAnswerText = $('<p>')
+            correctAnswerText.text("Correct answer ✔️")
+            correctAnswerText.attr("style", "margin-left: 40%; font-size: 20px")
+            $('#answernotifications').empty().append(correctAnswerText)
+    
+    
+        } else {
+            var correctAnswerText = $('<p>')
+            correctAnswerText.text("Incorrect answer ❌")
+            correctAnswerText.attr("style", "margin-left: 40%; font-size: 20px")
+            $('#answernotifications').empty().append(correctAnswerText)
+            secondsLeft -= 15
+    
+        }
+        
+       
+
+        Q3 ()
+
+        })
+
+        buttonList2.append(answersButtons);
+     
+}}
+
+function Q3 () {
+
+    questionLocation.innerText = "What is the difference between the operators ‘==‘ & ‘===‘?"
+
+for (var i = 0; i < answers3.length; i++) {
+    
+    var answersButtons = $('<button>');
+
+    answersButtons.addClass('.buttonstyling')
+    answersButtons.attr('data-answer', answers3[i])
+    answersButtons.text(answers3[i])
+    answersButtons.on('click', function checkAnswer (event) {
+
+        buttonList3.attr('style', 'display: none')
+
+        var target = event.target.innerText
+    
+    
+        if(target == correctAnswer3) {
+    
+            var correctAnswerText = $('<p>')
+            correctAnswerText.text("Correct answer ✔️")
+            correctAnswerText.attr("style", "margin-left: 40%; font-size: 20px")
+            $('#answernotifications').empty().append(correctAnswerText)
+    
+    
+        } else {
+            var correctAnswerText = $('<p>')
+            correctAnswerText.text("Incorrect answer ❌")
+            correctAnswerText.attr("style", "margin-left: 40%; font-size: 20px")
+            $('#answernotifications').empty().append(correctAnswerText)
+            secondsLeft -= 15
+    
+        }
+        
+        Q4 ()
+        
+        })
+
+        buttonList3.append(answersButtons);
+}}
+
+function Q4 () {
+console.log(answers4)
+questionLocation.innerText = "Which company developed JavaScript?";
+
+for (var i = 0; i < answers4.length; i++) {
+
+    var answersButtons = $('<button>');
+    
+    answersButtons.addClass('.buttonstyling')
+    answersButtons.attr('data-answer', answers4[i])
+    answersButtons.text(answers4[i])
+    answersButtons.on('click', function checkAnswer (event) {
+
+        buttonList2.attr('style', 'display: none')
+
+        var target = event.target.innerText
+        
+    
+        if(target == correctAnswer1) {
+    
+            var correctAnswerText = $('<p>')
+            correctAnswerText.text("Correct answer ✔️")
+            correctAnswerText.attr("style", "margin-left: 40%; font-size: 20px")
+            $('#answernotifications').empty().append(correctAnswerText)
+            gameOver ()
+    
+    
+        } else {
+            var correctAnswerText = $('<p>')
+            correctAnswerText.text("Incorrect answer ❌")
+            correctAnswerText.attr("style", "margin-left: 40%; font-size: 20px")
+            $('#answernotifications').empty().append(correctAnswerText)
+            secondsLeft -= 15
+            gameOver ()
+        }
+        clearInterval(timerInterval);
+        gameOver ()
+       
+        })
+
+buttonList4.append(answersButtons);
+
+}}
+
